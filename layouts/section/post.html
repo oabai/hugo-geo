@@ -1,4 +1,12 @@
-{{ range .Data.Pages }}
+{{ partial "head.html" . }}
+{{ partial "nav.html" . }}
+
+<article>
+	<header>
+		<h1>{{ .Title }}</a></h1>
+	</header>
+	
+	{{ range .Data.Pages }}
 	{{ if .Params.index }}
         <div class="panel panel-default">
         	<div class="panel-header">
@@ -29,3 +37,7 @@
         </div>
 	{{ end }}
 	{{ end }}
+	
+</article>
+
+{{ partial "footer.html" . }}
